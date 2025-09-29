@@ -30,15 +30,6 @@ Aktualnie repozytorium nie posiada opisu czy dokumentacji, stąd ten README ma p
 ## Zawartość repozytorium
 
 Oto najważniejsze pliki i katalogi:
-
-zadanieb/
-├── bin/ Debug ← katalog „bin/ Debug” – prawdopodobnie katalog wynikowy / build
-├── .gitignore
-├── instalacja_bibliotek.bat ← skrypt do instalacji bibliotek dla Windows
-├── instalacja_bibliotek_dla_linuxa.sh ← skrypt instalacyjny dla systemów uniksowych
-└── main.c ← główny kod programu w C
-
-
 - `bin/ Debug` — katalog (prawdopodobnie) wynikowy / build, może zawierać pliki binarne.  
 - `main.c` — główny plik źródłowy w języku C (kod programu).  
 - Skrypty instalacyjne — umożliwiają instalację zależności lub bibliotek potrzebnych do działania projektu na różnych systemach.  
