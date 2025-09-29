@@ -4,17 +4,21 @@
 
 int main()
 {
+    int numer;
     int odpowiedz;
     srand(time(NULL));
     int number = rand() % 100;
-    //printf("%d", number);
+    printf("%d", number);
     while(1)
     {
+     numer++;
      printf("Zgadnij liczbe od 1 do 100: \n");
      scanf("%d", &odpowiedz);
      if(odpowiedz == number)
      {
          printf("Brawo zgadles poprawna liczba to: %d", number);
+         printf(". Zgadles za %d", numer);
+         printf(" razem.");
          getchar();
          getchar();
          exit(0);
