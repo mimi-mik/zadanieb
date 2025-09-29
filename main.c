@@ -15,7 +15,7 @@ int main()
      scanf("%d", odpowiedz);
      if(odpowiedz == number)
      {
-         printf("Brawo zgad³es poprawna liczba to: %d", number);
+         printf("Brawo zgadles poprawna liczba to: %d", number);
          exit(0);
      }
      else
