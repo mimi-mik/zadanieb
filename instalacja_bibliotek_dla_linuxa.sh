@@ -2,4 +2,4 @@
 
 
 sudo apt update
-sudo apt install -y mingw64-w64
+sudo apt install -y build-essential

@@ -1,39 +1,18 @@
 # zadanieb
 
-Projekt „zadanieb” to zbiór zadań / ćwiczeń w języku C, stanowiący prawdopodobnie zbiór rozwiązań zadań (np. z kursów lub laboratoriów).  
-Repozytorium zawiera plik **main.c** oraz skrypty instalacyjne do biblioteki / zależności.
+Projekt **zadanieb** to przykładowy program napisany w języku **C**, przeznaczony do kompilacji i uruchamiania w systemach **Linux**, **Windows** oraz **macOS**.  
+Repozytorium zawiera pełny zestaw skryptów instalacyjnych, które automatycznie przygotowują środowisko programistyczne na każdej z tych platform.
 
 ---
 
-## Spis treści
+## Zawartość projektu
 
-- [Opis](#opis)  
-- [Zawartość repozytorium](#zawartość-repozytorium)  
-- [Wymagania](#wymagania)  
-- [Instalacja / przygotowanie środowiska](#instalacja--przygotowanie-środowiska)  
-- [Uruchomienie](#uruchomienie)  
-- [Rozszerzenia / przyszłe prace](#rozszerzenia--przyszłe-prace)  
-- [Wkład / kontrybucje](#wkład--kontrybucje)  
-- [Licencja](#licencja)  
-
----
-
-## Opis
-
-Projekt **zadanieb** zawiera kod w języku **C** (plik `main.c`) oraz skrypty instalacyjne (`instalacja_bibliotek.bat`, `instalacja_bibliotek_dla_linuxa.sh`) wspomagające przygotowanie środowiska.  
-Wygląda na to, że projekt służy do wykonywania (kompilowania / uruchamiania) określonego zadania lub zestawu zadań w C — być może jako część zajęć, laboratoriów lub testów.
-
-Aktualnie repozytorium nie posiada opisu czy dokumentacji, stąd ten README ma pomóc uporządkować informacje i ułatwić użytkownikowi start.
-
----
-
-## Zawartość repozytorium
-
-Oto najważniejsze pliki i katalogi:
-- `bin/ Debug` — katalog (prawdopodobnie) wynikowy / build, może zawierać pliki binarne.  
-- `main.c` — główny plik źródłowy w języku C (kod programu).  
-- Skrypty instalacyjne — umożliwiają instalację zależności lub bibliotek potrzebnych do działania projektu na różnych systemach.  
-- `.gitignore` — plik ignorujący zbędne pliki w repozytorium (np. pliki wynikowe).
+- `main.c` — główny plik źródłowy programu w języku C  
+- `instalacja_gcc_linux.sh` — skrypt instalujący pakiet `build-essential` (w tym gcc, make) na systemach Linux (Debian/Ubuntu)  
+- `instalacja_gcc_macos.sh` — skrypt instalujący kompilator gcc przez Homebrew na macOS  
+- `instalacja_bibliotek.bat` — skrypt instalujący MinGW (kompilator gcc dla Windows)  
+- `.gitignore` — plik z listą plików i katalogów ignorowanych przez Git  
+- `README.md` — ten plik z instrukcjami  
 
 ---
 
@@ -41,43 +20,58 @@ Oto najważniejsze pliki i katalogi:
 
 Aby skompilować i uruchomić projekt, potrzebujesz:
 
-- Kompilator języka C (np. `gcc`, `clang`, `clang` lub środowisko zgodne z systemem)  
-- System operacyjny: Windows lub Linux / Unix  
-- (Opcjonalnie) inne biblioteki lub zależności, które być może są instalowane przez skrypty `instalacja_bibliotek*.bat / .sh`  
-
-Jeśli projekt wymaga szczególnych bibliotek (np. biblioteki zewnętrzne, matematyczne, graficzne), warto je tutaj dodać.
+- Kompilator języka C (`gcc`)  
+- System operacyjny: Linux, Windows lub macOS  
+- Uprawnienia do instalacji oprogramowania (w zależności od systemu)  
 
 ---
 
 ## Instalacja / przygotowanie środowiska
 
-1. Sklonuj repozytorium:
+### Linux (Debian/Ubuntu)
 
-   ```bash
-   git clone https://github.com/mimi-mik/zadanieb.git
-   cd zadanieb
+Uruchom skrypt instalacyjny, który zainstaluje pakiet `build-essential` (zawierający `gcc` i `make`):
 
-    Uruchom skrypt instalacyjny odpowiedni dla Twojego systemu:
+```bash
+chmod +x instalacja_gcc_linux.sh
+./instalacja_gcc_linux.sh
 
-        Na Windows:
+macOS
+
+Przed uruchomieniem upewnij się, że masz zainstalowany Homebrew
+
+.
+Następnie uruchom skrypt instalacyjny:
+
+chmod +x instalacja_gcc_macos.sh
+./instalacja_gcc_macos.sh
+
+Uwaga: Skrypt instaluje gcc przez Homebrew. Alternatywnie możesz użyć kompilatora clang dostępnego wraz z Xcode Command Line Tools (xcode-select --install).
+Windows
+
+Uruchom plik instalacja_bibliotek.bat, który zainstaluje środowisko MinGW (GCC dla Windows):
 
 instalacja_bibliotek.bat
 
-Na Linux / macOS / system uniksowy:
+Po instalacji MinGW dodaj katalog bin z MinGW do zmiennej środowiskowej PATH, aby móc używać gcc z linii poleceń.
+Kompilacja i uruchomienie
 
-        chmod +x instalacja_bibliotek_dla_linuxa.sh
-        ./instalacja_bibliotek_dla_linuxa.sh
-
-    Ten krok powinien zainstalować lub skonfigurować wszystkie zależności / biblioteki, które są potrzebne, jeśli takie istnieją.
-
-Uruchomienie
-
-Po skonfigurowaniu środowiska (i zainstalowaniu zależności):
-
-    Skompiluj main.c. Przykład z użyciem gcc:
+Po przygotowaniu środowiska możesz skompilować program:
 
 gcc main.c -o zadanieb
 
-Uruchom powstały plik wykonywalny:
+Następnie uruchom powstały plik:
+
+    Linux/macOS:
 
 ./zadanieb
+
+    Windows (w cmd):
+
+zadanieb.exe
+
+Licencja
+
+Projekt jest objęty licencją GNU General Public License v3.0 (GPL-3.0).
+Pełna treść licencji znajduje się w pliku LICENSE
+.
